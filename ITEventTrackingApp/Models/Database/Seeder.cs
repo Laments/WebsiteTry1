@@ -12,6 +12,7 @@ using System.Data.Entity.Migrations;
 
 namespace ITEventTrackingApp.Models.DatabaseModel
 {
+    // The goal for this class is to seed dummy data. Below are not real people/not PII.
     public class Seeder
     {
         internal static void SeedDatabase(DatabaseTables dbContext)

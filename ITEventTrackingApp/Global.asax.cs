@@ -19,8 +19,9 @@ namespace ITEventTrackingApp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //Initialize DB 
+            //Force initialize DB at startup - useful mostly since it enables a minimum viable base (DB with dummy data)
             DatabaseTables dbContext = new DatabaseTables();
+            //note: using the below initializer since without it dbContext is a null object without it
             Database.SetInitializer<DatabaseTables>(new CreateDatabaseIfNotExists<DatabaseTables>());
             new DatabaseBootstrapper(dbContext).Configure();
         }
