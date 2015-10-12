@@ -1,0 +1,10 @@
+﻿notes from MF discussion: 1) Don't use TRY/CATCH unless you're actually doing something with the data or you need it for some reason
+	2) EF is an abstraction layer. Therefore, I don't need a generic DB Reader/Accesser since EF will do it for me anyways.
+	3) the point of Entity Framework is that you create a model of each table,
+			then the context holds all the tables as a type of object called a DbSet
+			that means you can access the table directly...it's essentially now a List of AttendanceRecords
+			then you query it using Linq - that's where .Where(....) and .Select, etc. comes in
+	4) I should keep each class targeted for the business logic it needs. MF suggests one class per table.
+            I can rely on Linq to do multi-DB access to return the info I want.
+	5) Use of Linq in conjunction with EF is essential. 
+
